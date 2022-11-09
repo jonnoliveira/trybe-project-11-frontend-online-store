@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ButtonCart from '../components/ButtonCart';
+import SidebarCategories from './SidebarCategories';
 
 export default class ProductsList extends Component {
   render() {
@@ -10,6 +11,7 @@ export default class ProductsList extends Component {
           <input type="text" />
         </div>
         <ButtonCart />
+        <SidebarCategories />
       </div>
     );
   }
