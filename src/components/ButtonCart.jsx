@@ -8,7 +8,6 @@ export default class ButtonCart extends Component {
         <button
           type="button"
           data-testid="shopping-cart-button"
-          Carrinho
         >
           Carrinho
         </button>
