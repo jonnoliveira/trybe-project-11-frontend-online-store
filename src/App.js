@@ -1,4 +1,5 @@
 import React from 'react';
+// import { getProductsFromCategoryAndQuery, getCategories } from './services/api';
 import logo from './logo.svg';
 import './App.css';
 
