@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ButtonCart from '../components/ButtonCart';
 import SidebarCategories from './SidebarCategories';
-// import { getProductsFromCategoryAndQuery } from '../services/api';
+// import { getProductsFromCategoryAndQuery } from '../services/api'
 
 export default class ProductsList extends Component {
   state = {
