@@ -9,6 +9,7 @@ export default class ProductsList extends Component {
   state = {
     inputValue: '',
     listInputItems: [],
+    categoryList: [],
   };
 
   onChangeHandler = ({ target }) => {
@@ -31,11 +32,17 @@ export default class ProductsList extends Component {
     console.log(search.results);
   };
 
+  selectCategoryId = async ({ target }) => {
+    const category = target.id;
+    const search = await getProductsFromCategoryAndQuery(category, null);
+    this.setState({ categoryList: search.results })
+  }
+
   render() {
-    const { inputValue, listInputItems } = this.state;
+    const { inputValue, listInputItems, categoryList } = this.state;
     return (
       <div className="container-all">
-        <SidebarCategories />
+        <SidebarCategories categoryList={ categoryList } selectCategoryId={ this.selectCategoryId } />
         <div className="searchAndResults">
           <div>
             <div data-testid="home-initial-message">
@@ -57,6 +64,20 @@ export default class ProductsList extends Component {
             </button>
             <ButtonCart />
             <div>
+            {
+                categoryList.length !== 0
+                  ? (
+                    <ul className="itemsList">
+                      { categoryList.map((item) => (
+                        <CartItems
+                          key={ item.id }
+                          item={ item }
+                        />
+                      )) }
+                    </ul>
+                  )
+                  : null
+              }
               {
                 listInputItems.length !== 0
                   ? (
