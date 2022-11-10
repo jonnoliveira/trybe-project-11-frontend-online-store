@@ -35,14 +35,17 @@ export default class ProductsList extends Component {
   selectCategoryId = async ({ target }) => {
     const category = target.id;
     const search = await getProductsFromCategoryAndQuery(category, null);
-    this.setState({ categoryList: search.results })
-  }
+    this.setState({ categoryList: search.results });
+  };
 
   render() {
     const { inputValue, listInputItems, categoryList } = this.state;
     return (
       <div className="container-all">
-        <SidebarCategories categoryList={ categoryList } selectCategoryId={ this.selectCategoryId } />
+        <SidebarCategories
+          categoryList={ categoryList }
+          selectCategoryId={ this.selectCategoryId }
+        />
         <div className="searchAndResults">
           <div>
             <div data-testid="home-initial-message">
@@ -64,14 +67,14 @@ export default class ProductsList extends Component {
             </button>
             <ButtonCart />
             <div>
-            {
+              {
                 categoryList.length !== 0
                   ? (
                     <ul className="itemsList">
-                      { categoryList.map((item) => (
+                      { categoryList.map((items) => (
                         <CartItems
-                          key={ item.id }
-                          item={ item }
+                          key={ items.id }
+                          item={ items }
                         />
                       )) }
                     </ul>

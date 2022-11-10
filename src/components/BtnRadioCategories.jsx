@@ -22,4 +22,6 @@ export default class BtnRadioCategories extends Component {
 
 BtnRadioCategories.propTypes = {
   name: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  selectCategoryId: PropTypes.func.isRequired,
 };

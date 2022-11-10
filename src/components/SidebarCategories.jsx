@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { getCategories } from '../services/api';
 import BtnRadioCategories from './BtnRadioCategories';
-import { getProductsFromCategoryAndQuery } from '../services/api';
 
 export default class SidebarCategories extends Component {
   state = {
@@ -13,14 +13,6 @@ export default class SidebarCategories extends Component {
     this.setState({ categoriesList });
   }
 
-  // selectCategoryId = async ({ target }) => {
-  //   const { categoryList } = this.props;
-
-  //   const category = target.id;
-  //   const search = await getProductsFromCategoryAndQuery(category, null);
-  //   this.setState({ categoryList: search })
-  // }
-
   render() {
     const { categoriesList } = this.state;
     const { selectCategoryId } = this.props;
@@ -29,9 +21,18 @@ export default class SidebarCategories extends Component {
         <h1>Categorias</h1>
         <ul>
           {categoriesList.map((item) => (
-            <BtnRadioCategories key={ item.id } name={ item.name } id={ item.id } selectCategoryId={ selectCategoryId } />)) }
+            <BtnRadioCategories
+              key={ item.id }
+              name={ item.name }
+              id={ item.id }
+              selectCategoryId={ selectCategoryId }
+            />)) }
         </ul>
       </div>
     );
   }
 }
+
+SidebarCategories.propTypes = {
+  selectCategoryId: PropTypes.func.isRequired,
+};
