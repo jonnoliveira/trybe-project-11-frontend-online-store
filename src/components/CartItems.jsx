@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './CartItem.css';
 
 export default class CartItems extends Component {
   render() {
     const { item } = this.props;
     const { title, thumbnail, price } = item;
     return (
-      <li data-testid="product">
+      <div data-testid="product" className="products">
         <img src={ thumbnail } alt={ title } />
         <h3>
           { title }
@@ -14,7 +15,7 @@ export default class CartItems extends Component {
         <h4>
           { price }
         </h4>
-      </li>
+      </div>
     );
   }
 }

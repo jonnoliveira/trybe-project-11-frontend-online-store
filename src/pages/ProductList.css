@@ -1,0 +1,17 @@
+/* .container-all {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid red;
+}
+
+.searchAndResults {
+  display: flex;
+  width: 70%;
+  justify-content: center;
+  border: 1px solid red;
+}
+
+.itemsList {
+  display: flex;
+  flex-direction: column;
+} */
