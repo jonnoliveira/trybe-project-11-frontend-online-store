@@ -23,9 +23,9 @@ export default class ProductsList extends Component {
 
   getItem = async () => {
     const { inputValue } = this.state;
-    //  CONSIDERANDO QUE AS PESSOAS NAO VAO PROCURAR POR ID
+    const validValue = inputValue.split(' ').join('_'); // VALIDAR UMA FRASE NO URL
+    const search = await getProductsFromCategoryAndQuery(null, validValue); //  CONSIDERANDO QUE AS PESSOAS NAO VAO PROCURAR POR ID
 
-    const search = await getProductsFromCategoryAndQuery(null, inputValue);
     this.setState({ listInputItems: search.results });
     console.log(search.results);
 
