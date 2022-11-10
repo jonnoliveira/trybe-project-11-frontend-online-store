@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { getCategories } from '../services/api';
-import BtnRadioCategories from '../components/BtnRadioCategories';
+import BtnRadioCategories from './BtnRadioCategories';
 
 export default class SidebarCategories extends Component {
   state = {
