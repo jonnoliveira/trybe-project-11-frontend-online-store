@@ -4,6 +4,26 @@ import PropTypes from 'prop-types';
 import './CartItem.css';
 
 export default class CartItems extends Component {
+  addLocalStorage = () => {
+    const { item } = this.props;
+    const { title, price } = item;
+    let products = [];
+    const quantity = 1;
+
+    if (localStorage.getItem('savedItems')) {
+      products = JSON.parse(localStorage.getItem('savedItems'));
+    }
+
+    const inCart = products.find((product) => product.title === title);
+    if (inCart) {
+      const index = products.findIndex((e) => e.title === title);
+      products[index].quantity += 1;
+    } else {
+      products.push({ title, price, quantity });
+    }
+    localStorage.setItem('savedItems', JSON.stringify(products));
+  };
+
   render() {
     const { item } = this.props;
     const { title, thumbnail, price, id } = item;
@@ -21,6 +41,13 @@ export default class CartItems extends Component {
             { price }
           </h4>
         </Link>
+        <button
+          type="button"
+          data-testid="product-add-to-cart"
+          onClick={ this.addLocalStorage }
+        >
+          Adicionar ao carrinho
+        </button>
       </div>
     );
   }
