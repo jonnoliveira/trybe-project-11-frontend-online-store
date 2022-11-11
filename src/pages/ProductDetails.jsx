@@ -24,6 +24,26 @@ export default class ProductDetails extends Component {
     this.setState({ productObj: product });
   };
 
+  addLocalStorage = () => {
+    const { productObj } = this.state;
+    const { title, price } = productObj;
+    let products = [];
+    const quantity = 1;
+
+    if (localStorage.getItem('savedItems')) {
+      products = JSON.parse(localStorage.getItem('savedItems'));
+    }
+
+    const inCart = products.find((product) => product.title === title);
+    if (inCart) {
+      const index = products.findIndex((e) => e.title === title);
+      products[index].quantity += 1;
+    } else {
+      products.push({ title, price, quantity });
+    }
+    localStorage.setItem('savedItems', JSON.stringify(products));
+  };
+
   render() {
     const { productObj } = this.state;
     const { thumbnail, title, price } = productObj;
@@ -45,6 +65,13 @@ export default class ProductDetails extends Component {
           FALTA ATRIBUTOS
         </p>
         <ButtonCart data-testid="shopping-cart-button" />
+        <button
+          type="button"
+          data-testid="product-detail-add-to-cart"
+          onClick={ this.addLocalStorage }
+        >
+          Adicionar ao carrinho
+        </button>
       </div>
     );
   }
