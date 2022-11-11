@@ -10,21 +10,25 @@ export default class ShoppingCart extends Component {
     const products = this.recoverLocalStorage();
 
     return (
-      <div data-testid="shopping-cart-empty-message">
+      <div>
         {
-          products.map((product) => (
-            <div key={ product.title }>
-              <p data-testid="shopping-cart-product-name">
-                {product.title }
-              </p>
-              <p>
-                { product.price }
-              </p>
-              <p data-testid="shopping-cart-product-quantity">
-                { product.quantity }
-              </p>
-            </div>
-          ))
+          localStorage.length === 0
+            ? <p data-testid="shopping-cart-empty-message">Seu carrinho está vazio</p>
+            : (
+              products.map((product) => (
+                <div key={ product.title }>
+                  <p data-testid="shopping-cart-product-name">
+                    {product.title }
+                  </p>
+                  <p>
+                    { product.price }
+                  </p>
+                  <p data-testid="shopping-cart-product-quantity">
+                    { product.quantity }
+                  </p>
+                </div>
+              ))
+            )
         }
       </div>
     );
