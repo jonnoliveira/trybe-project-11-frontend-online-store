@@ -48,6 +48,13 @@ export default class CartItems extends Component {
         >
           Adicionar ao carrinho
         </button>
+        {/* <button
+          type="button"
+          data-testid="remove-product"
+          onClick={ this.removeLocalStorage }
+        >
+          Remover ao carrinho
+        </button> */}
       </div>
     );
   }

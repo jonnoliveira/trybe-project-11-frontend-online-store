@@ -29,7 +29,6 @@ export default class ProductsList extends Component {
     const search = await getProductsFromCategoryAndQuery(null, validValue);
 
     this.setState({ listInputItems: search.results });
-    console.log(search.results);
   };
 
   selectCategoryId = async ({ target }) => {
