@@ -121,7 +121,6 @@ export default class ProductDetails extends Component {
       hidden,
     } = this.state;
     const { thumbnail, title, price } = productObj;
-    console.log(productLS);
 
     return (
       <div data-testid="product" className="productsAndComents">
