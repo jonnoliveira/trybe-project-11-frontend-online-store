@@ -8,7 +8,7 @@ export default class BtnRadioCategories extends Component {
       <li>
         <label htmlFor={ id } data-testid="category">
           <input
-            name="teste2"
+            name="category"
             id={ id }
             type="radio"
             onClick={ selectCategoryId }
