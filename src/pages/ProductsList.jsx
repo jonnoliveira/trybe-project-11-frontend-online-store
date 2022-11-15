@@ -10,6 +10,20 @@ export default class ProductsList extends Component {
     inputValue: '',
     listInputItems: [],
     categoryList: [],
+    count: 0,
+  };
+
+  componentDidMount() {
+    this.cartSizeCounter();
+  }
+
+  cartSizeCounter = () => {
+    if (localStorage.savedItems) {
+      const recoverProducts = JSON.parse(localStorage.getItem('savedItems'));
+      const arrayOfQuantitys = recoverProducts.map((product) => product.quantity);
+      const sum = arrayOfQuantitys.reduce((acc, curr) => acc + curr);
+      this.setState({ count: sum });
+    }
   };
 
   onChangeHandler = ({ target }) => {
@@ -38,7 +52,13 @@ export default class ProductsList extends Component {
   };
 
   render() {
-    const { inputValue, listInputItems, categoryList } = this.state;
+    const {
+      inputValue,
+      listInputItems,
+      categoryList,
+      count,
+    } = this.state;
+
     return (
       <div className="container-all">
         <SidebarCategories
@@ -64,7 +84,7 @@ export default class ProductsList extends Component {
             >
               Pesquisar
             </button>
-            <ButtonCart />
+            <ButtonCart count={ count } />
             <div>
               {
                 categoryList.length !== 0
@@ -74,6 +94,7 @@ export default class ProductsList extends Component {
                         <CartItems
                           key={ items.id }
                           item={ items }
+                          cartSizeCounter={ this.cartSizeCounter }
                         />
                       )) }
                     </ul>

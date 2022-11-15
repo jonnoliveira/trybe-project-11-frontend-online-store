@@ -25,7 +25,7 @@ export default class CartItems extends Component {
   };
 
   render() {
-    const { item } = this.props;
+    const { item, cartSizeCounter } = this.props;
     const { title, thumbnail, price, id } = item;
     return (
       <div data-testid="product" className="products">
@@ -44,7 +44,10 @@ export default class CartItems extends Component {
         <button
           type="button"
           data-testid="product-add-to-cart"
-          onClick={ this.addLocalStorage }
+          onClick={ () => {
+            this.addLocalStorage();
+            cartSizeCounter();
+          } }
         >
           Adicionar ao carrinho
         </button>
@@ -60,4 +63,5 @@ CartItems.propTypes = {
     price: PropTypes.number,
     id: PropTypes.string,
   }).isRequired,
+  cartSizeCounter: PropTypes.func.isRequired,
 };
