@@ -67,7 +67,6 @@ export default class CheckoutProducts extends Component {
       localStorage.removeItem('savedItems');
       history.push('/');
     }
-    console.log(payment);
   };
 
   emailValidation = () => {
@@ -143,7 +142,6 @@ export default class CheckoutProducts extends Component {
           hidden === false
             && <InvalidField hidden={ hidden } />
         }
-
       </div>
     );
   }

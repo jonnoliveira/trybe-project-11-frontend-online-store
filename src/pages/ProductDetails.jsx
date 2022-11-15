@@ -20,6 +20,7 @@ export default class ProductDetails extends Component {
     isDisabled: false,
     productLS: [],
     hidden: true,
+    count: 0,
   };
 
   componentDidMount() {
@@ -33,7 +34,17 @@ export default class ProductDetails extends Component {
         productLS: recoverProducts,
       });
     }
+    this.cartSizeCounter();
   }
+
+  cartSizeCounter = () => {
+    if (localStorage.savedItems) {
+      const recoverProducts = JSON.parse(localStorage.getItem('savedItems'));
+      const arrayOfQuantitys = recoverProducts.map((product) => product.quantity);
+      const sum = arrayOfQuantitys.reduce((acc, curr) => acc + curr);
+      this.setState({ count: sum });
+    }
+  };
 
   getProduct = async () => {
     const { match: { params: { id } } } = this.props;
@@ -59,6 +70,7 @@ export default class ProductDetails extends Component {
       products.push({ title, price, quantity });
     }
     localStorage.setItem('savedItems', JSON.stringify(products));
+    this.cartSizeCounter();
   };
 
   onChangeHandler = ({ target }) => {
@@ -90,25 +102,27 @@ export default class ProductDetails extends Component {
       text,
     } = this.state;
 
-    const { match: { params: { id } } } = this.props;
-    const products = [];
     const emailValidation = this.emailValidation();
+    let avaliations = [];
+
+    if (localStorage.getItem('avaliations')) {
+      avaliations = JSON.parse(localStorage.getItem('avaliations'));
+    }
 
     if (rating === undefined || email.length === 0 || emailValidation === false) {
       this.setState({ hidden: false });
     } else {
-      products.push({ email, rating, text });
-
-      localStorage.setItem(`${id}`, JSON.stringify(products));
+      avaliations.push({ email, rating, text });
 
       this.setState({
         hidden: true,
         email: '',
-        rating: 0,
+        rating: '',
         text: '',
-        productLS: products,
+        productLS: avaliations,
       });
     }
+    localStorage.setItem('avaliations', JSON.stringify(avaliations));
   };
 
   render() {
@@ -119,9 +133,10 @@ export default class ProductDetails extends Component {
       isDisabled,
       productLS,
       hidden,
+      count,
     } = this.state;
     const { thumbnail, title, price } = productObj;
-
+    console.log(count);
     return (
       <div data-testid="product" className="productsAndComents">
         <div className="products-details">
@@ -139,7 +154,7 @@ export default class ProductDetails extends Component {
           <p>
             FALTA ATRIBUTOS
           </p>
-          <ButtonCart data-testid="shopping-cart-button" />
+          <ButtonCart count={ count } data-testid="shopping-cart-button" />
           <button
             type="button"
             data-testid="product-detail-add-to-cart"
@@ -159,17 +174,22 @@ export default class ProductDetails extends Component {
           hidden === false
             && <InvalidField hidden={ hidden } />
         }
-        {
-          hidden === true && (
-            productLS.map((product, index) => (
-              <AddComents
-                email={ product.email }
-                rating={ product.rating }
-                text={ product.text }
-                key={ index }
-              />
-            )))
-        }
+        <div>
+          <h3>Avaliações</h3>
+          <div>
+            {
+              hidden === true && (
+                productLS.map((product, index) => (
+                  <AddComents
+                    email={ product.email }
+                    rating={ product.rating }
+                    text={ product.text }
+                    key={ index }
+                  />
+                )))
+            }
+          </div>
+        </div>
       </div>
     );
   }

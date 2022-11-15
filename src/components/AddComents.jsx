@@ -12,15 +12,15 @@ export default class AddComents extends Component {
     return (
       <div className="form-answer">
         <div>
-          <h3>Email:</h3>
+          <h4>Email:</h4>
           <p data-testid="review-card-email">{ email }</p>
         </div>
         <div>
-          <h3>Nota:</h3>
+          <h4>Nota:</h4>
           <p data-testid="review-card-rating">{ rating }</p>
         </div>
         <div>
-          <h3>Comentário:</h3>
+          <h4>Comentário:</h4>
           <p data-testid="review-card-evaluation">{ text }</p>
         </div>
       </div>
