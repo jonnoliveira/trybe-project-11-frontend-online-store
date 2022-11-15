@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ButtonCheckout from '../components/ButtonCheckout';
 
 export default class ShoppingCart extends Component {
   state = {
@@ -69,46 +70,51 @@ export default class ShoppingCart extends Component {
     const { attProducts } = this.state;
     return (
       <div>
-        {
-          attProducts.length
-            ? (
-              attProducts.map((product) => (
-                <div key={ product.title }>
-                  <p data-testid="shopping-cart-product-name">
-                    {product.title }
-                  </p>
-                  <p>
-                    { product.price }
-                  </p>
-                  <p data-testid="shopping-cart-product-quantity">
-                    { product.quantity }
-                  </p>
-                  <button
-                    type="button"
-                    onClick={ () => { this.decrementProduct(product.title); } }
-                    data-testid="product-decrease-quantity"
-                  >
-                    -
-                  </button>
-                  <button
-                    type="button"
-                    onClick={ () => { this.incrementProduct(product.title); } }
-                    data-testid="product-increase-quantity"
-                  >
-                    +
-                  </button>
-                  <button
-                    type="button"
-                    onClick={ () => { this.removeLocalStorage(product.title); } }
-                    data-testid="remove-product"
-                  >
-                    Remover
-                  </button>
-                </div>
-              ))
-            )
-            : <p data-testid="shopping-cart-empty-message">Seu carrinho está vazio</p>
-        }
+        <div>
+          {
+            attProducts.length
+              ? (
+                attProducts.map((product) => (
+                  <div key={ product.title }>
+                    <p data-testid="shopping-cart-product-name">
+                      {product.title }
+                    </p>
+                    <p>
+                      Preço: R$
+                      { product.price }
+                    </p>
+                    <p data-testid="shopping-cart-product-quantity">
+                      Qntd:
+                      { product.quantity }
+                    </p>
+                    <button
+                      type="button"
+                      onClick={ () => { this.decrementProduct(product.title); } }
+                      data-testid="product-decrease-quantity"
+                    >
+                      -
+                    </button>
+                    <button
+                      type="button"
+                      onClick={ () => { this.incrementProduct(product.title); } }
+                      data-testid="product-increase-quantity"
+                    >
+                      +
+                    </button>
+                    <button
+                      type="button"
+                      onClick={ () => { this.removeLocalStorage(product.title); } }
+                      data-testid="remove-product"
+                    >
+                      Remover
+                    </button>
+                  </div>
+                ))
+              )
+              : <p data-testid="shopping-cart-empty-message">Seu carrinho está vazio</p>
+          }
+        </div>
+        <ButtonCheckout />
       </div>
     );
   }
