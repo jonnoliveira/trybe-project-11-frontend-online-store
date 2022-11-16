@@ -20,24 +20,18 @@ export default class ShoppingCart extends Component {
   };
 
   incrementProduct = (title) => {
-    //  APESAR DE ESTAR FUNCIONANDO NO NOSSO SITE, NAO PASSAVA NO TESTE PORQUE
-    // OS ELEMENTOS DO DOM ESTAVAM DESPONIBILIZADOS DE OUTRA MANEIRA.
-    // POR ISSO, QUANDO CHAMAVAMOS O TARGET ACABAVAMOS POR RECEBER UM ELEMENTO
-    // ERRADO
-    // const element = target.parentNode.firstChild.innerText;
-
     const { attProducts } = this.state;
-    // VERIFICAR SE O PRODUTO EXISTE NO LOCALSTORAGE
+
     const inCart = attProducts.some((product) => product.title.includes(title));
-    //  SE EXISTIR ENCONTRAR PELO INDICE E AUMENTA A QNTD EM 1
+
     if (inCart) {
       const index = attProducts.findIndex((e) => e.title.includes(title));
-      attProducts[index].quantity += 1;
+      if (attProducts[index].quantity < attProducts[index].availableQuantity) {
+        attProducts[index].quantity += 1;
+      }
 
-      // ATUALIZA O LOCALSTORAGE
       localStorage.setItem('savedItems', JSON.stringify(attProducts));
 
-      // ATUALIZA O ARRAY PADRÃO
       this.setState({ attProducts });
     }
   };
@@ -63,6 +57,11 @@ export default class ShoppingCart extends Component {
     const newArrItems = attProducts.filter((product) => product.title !== title);
 
     localStorage.setItem('savedItems', JSON.stringify(newArrItems));
+
+    if (newArrItems.length === 0) {
+      localStorage.removeItem('savedItems');
+    }
+
     this.setState({ attProducts: newArrItems });
   };
 

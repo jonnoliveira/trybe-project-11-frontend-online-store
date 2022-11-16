@@ -6,7 +6,7 @@ import './CartItem.css';
 export default class CartItems extends Component {
   addLocalStorage = () => {
     const { item } = this.props;
-    const { title, price } = item;
+    const { title, price, available_quantity: availableQuantity } = item;
     let products = [];
     const quantity = 1;
 
@@ -19,7 +19,7 @@ export default class CartItems extends Component {
       const index = products.findIndex((e) => e.title === title);
       products[index].quantity += 1;
     } else {
-      products.push({ title, price, quantity });
+      products.push({ title, price, quantity, availableQuantity });
     }
     localStorage.setItem('savedItems', JSON.stringify(products));
   };
@@ -62,6 +62,7 @@ CartItems.propTypes = {
     thumbnail: PropTypes.string,
     price: PropTypes.number,
     id: PropTypes.string,
+    available_quantity: PropTypes.number,
   }).isRequired,
   cartSizeCounter: PropTypes.func.isRequired,
 };
