@@ -59,6 +59,8 @@ export default class ProductsList extends Component {
       count,
     } = this.state;
 
+    console.log(listInputItems);
+
     return (
       <div className="container-all">
         <SidebarCategories
