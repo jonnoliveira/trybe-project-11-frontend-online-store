@@ -54,7 +54,8 @@ export default class ProductDetails extends Component {
 
   addLocalStorage = () => {
     const { productObj } = this.state;
-    const { title, price } = productObj;
+    const { title, price, available_quantity: availableQuantity } = productObj;
+
     let products = [];
     const quantity = 1;
 
@@ -67,7 +68,7 @@ export default class ProductDetails extends Component {
       const index = products.findIndex((e) => e.title === title);
       products[index].quantity += 1;
     } else {
-      products.push({ title, price, quantity });
+      products.push({ title, price, quantity, availableQuantity });
     }
     localStorage.setItem('savedItems', JSON.stringify(products));
     this.cartSizeCounter();
@@ -136,7 +137,6 @@ export default class ProductDetails extends Component {
       count,
     } = this.state;
     const { thumbnail, title, price } = productObj;
-    console.log(count);
     return (
       <div data-testid="product" className="productsAndComents">
         <div className="products-details">
