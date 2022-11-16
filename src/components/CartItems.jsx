@@ -86,7 +86,7 @@ export default class CartItems extends Component {
                     cartSizeCounter();
                   } }
                 >
-                  Adicionar ao carrinho
+                  Adicionar ao carrinho;
                 </button>
               </div>
             )
@@ -105,5 +105,10 @@ CartItems.propTypes = {
     available_quantity: PropTypes.number,
     shipping: PropTypes.instanceOf(Object),
   }).isRequired,
-  cartSizeCounter: PropTypes.func.isRequired,
+  cartSizeCounter: PropTypes.func,
+
+};
+
+CartItems.defaultProps = {
+  cartSizeCounter: PropTypes.func,
 };
