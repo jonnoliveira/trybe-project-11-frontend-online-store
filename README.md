@@ -72,7 +72,7 @@ Neste projeto em grupo criamos uma página dinâmica de e-commerce com React. Pa
 
 ## 100% :heavy_check_mark:
 
-![Project-Frontend-Online-Store-Grade]()
+![Project-Frontend-Online-Store-Grade](https://github.com/jonnoliveira/trybe-project-11-frontend-online-store/blob/main/images/frontend-online-store-grade.png)
 
 </details> 
  
