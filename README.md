@@ -1,13 +1,93 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+# PROJETO 11 - FRONT-END ONLINE STORE :computer:
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+## Esse projeto pertence ao módulo de `front-end` do curso da [Trybe](https://www.betrybe.com/) :green_heart:
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+## :construction: CSS em aprimoramento :construction:
+ 
+<details>
+ 
+<summary>
+  
+## 1- Resumo
+  
+</summary>
+
+Neste projeto em grupo criamos uma página dinâmica de e-commerce com React. Para tal utilizamos a metodologia ágil Kanban na coordenação e organização da equipe. Em relação a funcionalidade da aplicação utilizamos o React como base para realizar requisições, renderização condicional, componentização e estados de componentes e rotas de aplicação. Dessa forma conseguimos desenvolver um Front-End de e-commerce alimentado por uma API do Mercado Livre. Veja mais abaixo!
+</details>
+
+#
+
+<details>
+ 
+<summary>
+ 
+## 2- Requisitos
+
+</summary>
+
+### I. Implemente o módulo de acesso à api do Mercado Livre.
+
+### II. Crie uma página de listagem de produtos vazia.
+
+### III. Crie a página do carrinho de compras.
+
+### IV. Liste as categorias de produtos disponíveis via API na página principal.
+
+### V. Liste os produtos buscados por termos, com os dados resumidos, associados a esses termos.
+
+### VI. Selecione uma categoria e mostre somente os produtos daquela categoria.
+
+### VII. Redirecione para uma tela com a exibição detalhada ao clicar na exibição resumida de um produto.
+
+### VIII. Adicione produtos a partir da tela de listagem de produtos.
+
+### IX. Adicione um produto ao carrinho a partir de sua tela de exibição detalhada.
+
+### X. Visualize a lista de produtos adicionados ao carrinho em sua página e permita a manipulação da sua quantidade.
+
+### XI. Avalie e comente acerca de um produto em sua tela de exibição detalhada.
+
+### XII. Finalize a compra vendo um resumo dela, preenchendo os seus dados e escolhendo a forma de pagamento.
+---
+
+## Requisitos bônus:
+
+### XIII. Mostre junto ao ícone do carrinho a quantidade de produtos dentro dele, em todas as telas em que ele aparece.
+
+### XIV. Limite a quantidade de produtos adicionados ao carrinho pela quantidade disponível em estoque.
+
+### XV. Mostre quais produtos tem o frete grátis.
+
+</details>
+
+# 
+
+<details>
+ 
+<summary>
+
+## 3- Nota do Projeto
+ 
+</summary>
+
+## 100% :heavy_check_mark:
+
+![Project-Frontend-Online-Store-Grade]()
+
+</details> 
+ 
+# 
+
+<details>
+ 
+<summary>
+
+## 4- Preview
+
+</summary>
+
+![Project-Frontend-Online-Store-Grade]()
+
+</details>
+
+
