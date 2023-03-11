@@ -1,0 +1,76 @@
+.header-container-all {
+  align-items: center;
+  background-color: #003be5;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 3vh;
+}
+
+.header-titles-img {
+  display: flex;
+  gap: 10vw;
+}
+
+.header-titles-img img {
+  width: 50px;
+}
+
+.header-titles {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header-titles h1 {
+  font-weight: 400;
+  line-height: 1.2em;
+  text-transform: uppercase;
+}
+
+.header-titles p {
+  color: #31c28dff;
+  font-size: larger;
+  font-weight: 400;
+  line-height: 1em;
+}
+
+.header-search-cart {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5vh;
+  width: 100%;
+}
+
+.header-inputs {
+  align-items: center;
+  background-color: white;
+  display: flex;
+  justify-content: space-evenly;
+  width: 70%;
+}
+
+.header-inputs input {
+  border: none;
+  height: 4vh;
+  text-align: center;
+}
+
+.header-inputs input::placeholder {
+  color: rgba(128, 128, 128, 0.7);
+}
+
+
+.header-inputs button {
+  background-color: white;
+  border: none;
+  height: 4vh;
+}
+
+
+.header-inputs button img {
+  width: 20px;
+}

@@ -1,7 +1,6 @@
 import React from 'react';
-import './App.css';
 import { Switch, Route } from 'react-router-dom';
-import ProductsList from './pages/ProductsList';
+import Home from './pages/Home';
 import ShoppingCart from './pages/ShoppingCart';
 import ProductDetails from './pages/ProductDetails';
 import CheckoutProducts from './pages/CheckoutProducts';
@@ -10,7 +9,7 @@ function App() {
   return (
     <div>
       <Switch>
-        <Route exact path="/" component={ ProductsList } />
+        <Route exact path="/" component={ Home } />
         <Route exact path="/shoppingcart" component={ ShoppingCart } />
         <Route exact path="/checkoutproducts" component={ CheckoutProducts } />
         <Route

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import shopCart from '../assets/shopCart.svg';
+import '../css/ButtonCart.css';
 
 export default class ButtonCart extends Component {
   render() {
@@ -10,9 +12,10 @@ export default class ButtonCart extends Component {
         <button
           type="button"
           data-testid="shopping-cart-button"
+          className="ButtonCart-container"
         >
-          Carrinho
-          <p data-testid="shopping-cart-size">{ count }</p>
+          <img src={ shopCart } alt="Cart icon" />
+          <p data-testid="shopping-cart-size" className="ButtonCart-counter">{ count }</p>
         </button>
       </Link>
     );

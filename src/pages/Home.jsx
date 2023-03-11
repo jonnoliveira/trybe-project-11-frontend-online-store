@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import ButtonCart from '../components/ButtonCart';
+import Header from '../components/Header';
 import CartItems from '../components/CartItems';
 import SidebarCategories from '../components/SidebarCategories';
 import { getProductsFromCategoryAndQuery } from '../services/api';
-import './ProductList.css';
+import '../css/Home.css';
 
-export default class ProductsList extends Component {
+export default class Home extends Component {
   state = {
     inputValue: '',
     listInputItems: [],
@@ -59,39 +59,23 @@ export default class ProductsList extends Component {
       count,
     } = this.state;
 
-    console.log(listInputItems);
-
     return (
-      <div className="container-all">
+      <div className="home-container">
+        <Header
+          onChangeHandler={ this.onChangeHandler }
+          getItem={ this.getItem }
+          inputValue={ inputValue }
+          count={ count }
+        />
         <SidebarCategories
           categoryList={ categoryList }
           selectCategoryId={ this.selectCategoryId }
         />
-        <div className="searchAndResults">
-          <div>
-            <div data-testid="home-initial-message">
-              <p>Digite algum termo de pesquisa ou escolha uma categoria.</p>
-            </div>
-            <input
-              type="text"
-              value={ inputValue }
-              name="inputValue"
-              onChange={ this.onChangeHandler }
-              data-testid="query-input"
-            />
-            <button
-              type="button"
-              onClick={ this.getItem }
-              data-testid="query-button"
-            >
-              Pesquisar
-            </button>
-            <ButtonCart count={ count } />
-            <div>
-              {
-                categoryList.length !== 0
-                  ? (
-                    <ul className="itemsList">
+        <div className="home-productsList-container">
+          {
+            categoryList.length !== 0
+                  && (
+                    <ul className="home-itemsList">
                       { categoryList.map((items) => (
                         <CartItems
                           key={ items.id }
@@ -101,24 +85,26 @@ export default class ProductsList extends Component {
                       )) }
                     </ul>
                   )
-                  : null
-              }
-              {
-                listInputItems.length !== 0
-                  ? (
-                    <ul className="itemsList">
-                      { listInputItems.map((item) => (
-                        <CartItems
-                          key={ item.id }
-                          item={ item }
-                        />
-                      )) }
-                    </ul>
-                  )
-                  : <p>Nenhum produto foi encontrado</p>
-              }
-            </div>
-          </div>
+          }
+          {
+            listInputItems.length !== 0
+              ? (
+                <ul className="home-itemsList">
+                  { listInputItems.map((item) => (
+                    <CartItems
+                      key={ item.id }
+                      item={ item }
+                    />
+                  )) }
+                </ul>
+              )
+              : (
+                <div className="home-notfound-container">
+                  <img src="" alt="" />
+                  <p> Você ainda não realizou uma busca</p>
+                </div>
+              )
+          }
         </div>
       </div>
     );
