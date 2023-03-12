@@ -12,6 +12,7 @@ export default class BtnRadioCategories extends Component {
             id={ id }
             type="radio"
             onClick={ selectCategoryId }
+            className="input-radio"
           />
           { name }
         </label>
