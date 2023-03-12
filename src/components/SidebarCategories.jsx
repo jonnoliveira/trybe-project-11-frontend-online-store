@@ -26,9 +26,15 @@ export default class SidebarCategories extends Component {
     }
   };
 
+  handleFunctionAndState = ({ target }) => {
+    const { selectCategoryId } = this.props;
+
+    selectCategoryId({ target });
+    this.setState({ isListed: false });
+  };
+
   render() {
     const { categoriesList, isListed } = this.state;
-    const { selectCategoryId } = this.props;
     return (
       <div className="categories-container">
         <button
@@ -48,7 +54,8 @@ export default class SidebarCategories extends Component {
                     key={ item.id }
                     name={ item.name }
                     id={ item.id }
-                    selectCategoryId={ selectCategoryId }
+                    handleFunctionAndState={ this.handleFunctionAndState }
+                    isListed={ isListed }
                   />)) }
               </ul>
             )

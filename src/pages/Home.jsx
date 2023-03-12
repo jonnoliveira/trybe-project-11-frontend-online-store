@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from '../components/Header';
 import CartItems from '../components/CartItems';
 import SidebarCategories from '../components/SidebarCategories';
+import notSearch from '../assets/notSearch.svg';
 import { getProductsFromCategoryAndQuery } from '../services/api';
 import '../css/Home.css';
 
@@ -42,13 +43,19 @@ export default class Home extends Component {
     const validValue = inputValue.split(' ').join('_');
     const search = await getProductsFromCategoryAndQuery(null, validValue);
 
-    this.setState({ listInputItems: search.results });
+    this.setState({
+      listInputItems: search.results,
+      categoryList: [],
+    });
   };
 
   selectCategoryId = async ({ target }) => {
     const category = target.id;
     const search = await getProductsFromCategoryAndQuery(category, null);
-    this.setState({ categoryList: search.results });
+    this.setState({
+      categoryList: search.results,
+      listInputItems: [],
+    });
   };
 
   render() {
@@ -88,7 +95,7 @@ export default class Home extends Component {
           }
           {
             listInputItems.length !== 0
-              ? (
+              && (
                 <ul className="home-itemsList">
                   { listInputItems.map((item) => (
                     <CartItems
@@ -98,10 +105,13 @@ export default class Home extends Component {
                   )) }
                 </ul>
               )
-              : (
+          }
+          {
+            categoryList.length === 0 && listInputItems.length === 0
+              && (
                 <div className="home-notfound-container">
-                  <img src="" alt="" />
-                  <p> Você ainda não realizou uma busca</p>
+                  <img src={ notSearch } alt="Nenhuma busca icon" />
+                  <p> Você ainda não realizou uma busca...</p>
                 </div>
               )
           }

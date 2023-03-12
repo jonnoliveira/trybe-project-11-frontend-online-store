@@ -1,1 +1,23 @@
+.home-container {
+  background-color: white;
+  min-height: 100vh;
+}
 
+.home-notfound-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-notfound-container img {
+  width: 250px;
+}
+
+.home-notfound-container p {
+  color: gray;
+  font-style: italic;
+  text-align: center;
+
+  /* text-transform: uppercase; */
+  width: 80%;
+}

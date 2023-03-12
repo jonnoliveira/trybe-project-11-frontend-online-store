@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export default class BtnRadioCategories extends Component {
   render() {
-    const { name, id, selectCategoryId } = this.props;
+    const { name, id, handleFunctionAndState } = this.props;
     return (
       <li>
         <label htmlFor={ id } data-testid="category">
@@ -11,7 +11,7 @@ export default class BtnRadioCategories extends Component {
             name="category"
             id={ id }
             type="radio"
-            onClick={ selectCategoryId }
+            onClick={ handleFunctionAndState }
             className="input-radio"
           />
           { name }
@@ -24,5 +24,5 @@ export default class BtnRadioCategories extends Component {
 BtnRadioCategories.propTypes = {
   name: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
-  selectCategoryId: PropTypes.func.isRequired,
+  handleFunctionAndState: PropTypes.func.isRequired,
 };

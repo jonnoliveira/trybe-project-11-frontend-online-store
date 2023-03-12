@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import fshipping from '../assets/fshipping.svg';
+import shopCart from '../assets/shopCart.svg';
 import '../css/CartItem.css';
 
 export default class CartItems extends Component {
@@ -34,22 +36,27 @@ export default class CartItems extends Component {
       shipping: { free_shipping: freeShipping },
     } = item;
     return (
-      <div>
+      <div className="cartItem-container">
         {
           freeShipping
             ? (
-              <div data-testid="product" className="products">
+              <div data-testid="product" className="cartItem-products">
                 <Link
                   to={ `/productdetails/${id}` }
                   data-testid="product-detail-link"
                 >
-                  <img src={ thumbnail } alt={ title } />
-                  <h3>
-                    { title }
-                  </h3>
-                  <h2 data-testid="free-shipping">FRETE GRÁTIS</h2>
+                  <div className="cartItem-products-img-title">
+                    <img src={ thumbnail } alt={ title } />
+                    <h3>
+                      { title }
+                    </h3>
+                  </div>
+                  <div className="cartItem-products-free-shipping">
+                    <img src={ fshipping } alt="Free shipping icon" />
+                    <h2 data-testid="free-shipping">FRETE GRÁTIS</h2>
+                  </div>
                   <h4>
-                    { price }
+                    { `R$ ${price}` }
                   </h4>
                 </Link>
                 <button
@@ -59,23 +66,26 @@ export default class CartItems extends Component {
                     this.addLocalStorage();
                     cartSizeCounter();
                   } }
+                  className="cartItem-products-btn-addCart"
                 >
                   Adicionar ao carrinho
                 </button>
               </div>
             )
             : (
-              <div data-testid="product" className="products">
+              <div data-testid="product" className="cartItem-products">
                 <Link
                   to={ `/productdetails/${id}` }
                   data-testid="product-detail-link"
                 >
-                  <img src={ thumbnail } alt={ title } />
-                  <h3>
-                    { title }
-                  </h3>
+                  <div className="cartItem-products-img-title">
+                    <img src={ thumbnail } alt={ title } />
+                    <h3>
+                      { title }
+                    </h3>
+                  </div>
                   <h4>
-                    { price }
+                    { `R$ ${price}` }
                   </h4>
                 </Link>
                 <button
@@ -85,8 +95,10 @@ export default class CartItems extends Component {
                     this.addLocalStorage();
                     cartSizeCounter();
                   } }
+                  className="cartItem-products-btn-addCart"
                 >
-                  Adicionar ao carrinho;
+                  Adicionar ao carrinho
+                  <img src={ shopCart } alt="Shopcart icon" />
                 </button>
               </div>
             )
