@@ -4,6 +4,7 @@ import CartItems from '../components/CartItems';
 import SidebarCategories from '../components/SidebarCategories';
 import notSearch from '../assets/notSearch.svg';
 import { getProductsFromCategoryAndQuery } from '../services/api';
+import Loading from '../components/Loading';
 import '../css/Home.css';
 
 export default class Home extends Component {
@@ -12,6 +13,7 @@ export default class Home extends Component {
     listInputItems: [],
     categoryList: [],
     count: 0,
+    isLoading: false,
   };
 
   componentDidMount() {
@@ -40,32 +42,32 @@ export default class Home extends Component {
 
   getItem = async () => {
     const { inputValue } = this.state;
+    this.setState({ isLoading: true });
     const validValue = inputValue.split(' ').join('_');
     const search = await getProductsFromCategoryAndQuery(null, validValue);
 
     this.setState({
       listInputItems: search.results,
       categoryList: [],
+      isLoading: false,
     });
   };
 
   selectCategoryId = async ({ target }) => {
+    this.setState({ isLoading: true });
     const category = target.id;
     const search = await getProductsFromCategoryAndQuery(category, null);
     this.setState({
       categoryList: search.results,
       listInputItems: [],
+      isLoading: false,
     });
   };
 
   render() {
     const {
-      inputValue,
-      listInputItems,
-      categoryList,
-      count,
+      inputValue, listInputItems, categoryList, count, isLoading,
     } = this.state;
-
     return (
       <div className="home-container">
         <Header
@@ -80,7 +82,7 @@ export default class Home extends Component {
         />
         <div className="home-productsList-container">
           {
-            categoryList.length !== 0
+            categoryList.length !== 0 && isLoading === false
                   && (
                     <ul className="home-itemsList">
                       { categoryList.map((items) => (
@@ -94,21 +96,25 @@ export default class Home extends Component {
                   )
           }
           {
-            listInputItems.length !== 0
+            listInputItems.length !== 0 && isLoading === false
               && (
                 <ul className="home-itemsList">
                   { listInputItems.map((item) => (
                     <CartItems
                       key={ item.id }
                       item={ item }
+                      cartSizeCounter={ this.cartSizeCounter }
                     />
                   )) }
                 </ul>
               )
           }
           {
-            categoryList.length === 0 && listInputItems.length === 0
-              && (
+            isLoading
+              ? (
+                <Loading />
+              )
+              : (
                 <div className="home-notfound-container">
                   <img src={ notSearch } alt="Nenhuma busca icon" />
                   <p> Você ainda não realizou uma busca...</p>

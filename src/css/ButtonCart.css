@@ -14,8 +14,8 @@
   display: flex;
   height: 20px;
   justify-content: center;
-  position: absolute;
-  right: 5vw;
-  top: 16vh;
+  position: relative;
+  right: -5vw;
+  top: -7vh;
   width: 20px;
 }

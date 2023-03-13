@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import '../css/Addcoments.css';
 
 export default class AddComents extends Component {
   render() {
@@ -10,16 +11,16 @@ export default class AddComents extends Component {
     } = this.props;
 
     return (
-      <div className="form-answer">
-        <div>
+      <div className="addComents-container">
+        <div className="addComents-email">
           <h4>Email:</h4>
           <p data-testid="review-card-email">{ email }</p>
         </div>
-        <div>
+        <div className="addComents-grade">
           <h4>Nota:</h4>
           <p data-testid="review-card-rating">{ rating }</p>
         </div>
-        <div>
+        <div className="addComents-coments">
           <h4>Comentário:</h4>
           <p data-testid="review-card-evaluation">{ text }</p>
         </div>

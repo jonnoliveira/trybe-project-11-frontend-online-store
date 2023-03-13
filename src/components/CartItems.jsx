@@ -8,7 +8,7 @@ import '../css/CartItem.css';
 export default class CartItems extends Component {
   addLocalStorage = () => {
     const { item } = this.props;
-    const { title, price, available_quantity: availableQuantity } = item;
+    const { title, price, available_quantity: availableQuantity, thumbnail } = item;
     let products = [];
     const quantity = 1;
 
@@ -20,8 +20,10 @@ export default class CartItems extends Component {
     if (inCart) {
       const index = products.findIndex((e) => e.title === title);
       products[index].quantity += 1;
+      const newPrice = products[index].quantity * products[index].price;
+      products[index].price = newPrice;
     } else {
-      products.push({ title, price, quantity, availableQuantity });
+      products.push({ title, price, quantity, availableQuantity, thumbnail });
     }
     localStorage.setItem('savedItems', JSON.stringify(products));
   };
@@ -69,6 +71,7 @@ export default class CartItems extends Component {
                   className="cartItem-products-btn-addCart"
                 >
                   Adicionar ao carrinho
+                  <img src={ shopCart } alt="Shopcart icon" />
                 </button>
               </div>
             )

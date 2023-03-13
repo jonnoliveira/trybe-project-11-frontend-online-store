@@ -1,0 +1,32 @@
+.addComents-container {
+  background-color: rgba(128, 128, 128, 0.1);
+  margin-bottom: 5vh;
+}
+
+.addComents-email, .addComents-grade, .addComents-coments {
+  padding: 2vh;
+}
+
+.addComents-email, .addComents-grade {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.addComents-coments {
+  align-items: start;
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+
+.addComents-email h4, .addComents-grade h4, .addComents-coments h4 {
+  font-weight: 400;
+}
+
+.addComents-email p, .addComents-grade p, .addComents-coments p {
+  font-size: small;
+  font-style: italic;
+  font-weight: 300;
+  text-align: justify;
+}

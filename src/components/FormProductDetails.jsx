@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import '../css/FormProductDetails.css';
 
 export default class FormProductDetails extends Component {
   render() {
@@ -12,10 +13,11 @@ export default class FormProductDetails extends Component {
     } = this.props;
 
     return (
-      <form action="" className="product-forms">
-        <div className="email-product-details">
+      <form action="" className="formProductDetails-container">
+        <div className="formProductDetails-email">
           <label htmlFor="email-form-product-details">
-            Email:
+            *Email:
+            {' '}
             <input
               type="email"
               name="email"
@@ -24,11 +26,12 @@ export default class FormProductDetails extends Component {
               required
               onChange={ onChangeHandler }
               data-testid="product-detail-email"
+              placeholder="Digite seu email"
             />
           </label>
         </div>
-        <div className="rating-product-details">
-          <p>Avaliação do Produto:</p>
+        <div className="formProductDetails-rating">
+          <p>*Avaliação do Produto:</p>
           <label htmlFor="rating-1-form-product-details">
             <input
               name="rating"
@@ -38,6 +41,7 @@ export default class FormProductDetails extends Component {
               required
               onClick={ onChangeHandler }
               data-testid="1-rating"
+              className="formProductDetails-ratin-inputRadio"
             />
             1
           </label>
@@ -50,6 +54,7 @@ export default class FormProductDetails extends Component {
               required
               onClick={ onChangeHandler }
               data-testid="2-rating"
+              className="formProductDetails-ratin-inputRadio"
             />
             2
           </label>
@@ -62,6 +67,7 @@ export default class FormProductDetails extends Component {
               required
               onClick={ onChangeHandler }
               data-testid="3-rating"
+              className="formProductDetails-ratin-inputRadio"
             />
             3
           </label>
@@ -74,6 +80,7 @@ export default class FormProductDetails extends Component {
               required
               onClick={ onChangeHandler }
               data-testid="4-rating"
+              className="formProductDetails-ratin-inputRadio"
             />
             4
           </label>
@@ -86,22 +93,28 @@ export default class FormProductDetails extends Component {
               required
               onClick={ onChangeHandler }
               data-testid="5-rating"
+              className="formProductDetails-ratin-inputRadio"
             />
             5
           </label>
         </div>
-        <div className="coments-product-details">
+        <div className="formProductDetails-coments">
           <label htmlFor="coments-form-product-details">
-            Comentários:
+            *Comentários:
             <textarea
               name="text"
               value={ text }
               id="coments-form-product-details"
               onChange={ onChangeHandler }
               data-testid="product-detail-evaluation"
+              placeholder="Comente aqui sua avaliação sobre o produto."
             />
           </label>
         </div>
+        {
+          isDisabled
+            && <div className="formProductDetails-alert">*Campos obrigatórios</div>
+        }
         <button
           type="button"
           onClick={ btnSubmitFunction }

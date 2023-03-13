@@ -1,0 +1,59 @@
+.formProductDetails-container {
+  background-color: rgba(128, 128, 128, 0.1);
+  margin-top: 2vh;
+  padding: 2vh;
+}
+
+.formProductDetails-email {
+  padding: 1vh;
+}
+
+.formProductDetails-email input {
+  height: 4vh;
+  padding-left: 2vw;
+  width: 100%;
+}
+
+.formProductDetails-rating {
+  padding: 1vh;
+}
+
+.formProductDetails-rating label {
+  padding-left: 3vh;
+}
+
+.formProductDetails-ratin-inputRadio {
+  margin-right: 1vh;
+}
+
+.formProductDetails-coments {
+  padding: 2vh;
+}
+
+.formProductDetails-coments textarea {
+  height: 15vh;
+  padding: 2vh;
+  width: 100%;
+}
+
+.formProductDetails-alert {
+  color: red;
+  font-size: 10px;
+  padding: 0 3vh 3vh;
+  text-align: center;
+}
+
+.formProductDetails-container button {
+  background-color: #31c28dff;
+  border: none;
+  color: white;
+  height: 5vh;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.formProductDetails-container button:disabled {
+  background-color: rgb(11, 51, 36);
+}
+

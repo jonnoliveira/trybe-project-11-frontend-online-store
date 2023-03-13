@@ -1,0 +1,32 @@
+.miniHeader-container {
+  align-items: center;
+  background-color: #003be5;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 3vh;
+}
+
+.miniHeader-container img {
+  width: 50px;
+}
+
+.miniHeader-titles {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.miniHeader-titles h1 {
+  font-weight: 400;
+  line-height: 1.2em;
+  text-transform: uppercase;
+}
+
+.miniHeader-titles p {
+  color: #31c28dff;
+  font-size: larger;
+  font-weight: 400;
+  line-height: 1em;
+}

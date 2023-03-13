@@ -1,0 +1,108 @@
+.productsDetails-card {
+  padding: 2vh;
+}
+
+.productsDetails-img-title-price-btn {
+  align-items: left;
+  border: 1px solid rgba(5, 25, 207, 0.4);
+  display: flex;
+  flex-direction: column;
+  padding: 1vh;
+}
+
+.productsDetails-img-title-price-btn h4 {
+  font-size: 1.1em;
+  font-weight: 400;
+  margin-left: 4vw;
+}
+
+.productsDetails-img-title-price-btn button {
+  background-color: #31c28dff;
+  border: transparent;
+  color: white;
+  height: 5vh;
+  margin-top: 3vh;
+  text-transform: uppercase;
+}
+
+.productsDetails-img-title {
+  align-items: center;
+  display: flex;
+}
+
+.productsDetails-img-title img {
+  width: 100px;
+}
+
+.productsDetails-img-title h3 {
+  font-size: 0.9em;
+  font-weight: 300;
+  text-align: right;
+}
+
+
+.productsDetails-btnCart-especifications {
+  align-items: center;
+  background-color: #003be5;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3vh;
+  padding: 2vh;
+}
+
+.productsDetails-btnCart-especifications button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.productsDetails-btnCart-avaliations {
+  background-color: #003be5;
+  margin-top: 3vh;
+  padding: 4vh;
+}
+
+.productsDetails-btnCart-avaliations button img {
+  width: 20px;
+}
+
+.productsDetails-btnCart-avaliations button {
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.productsDetails-list {
+  background-color: rgba(128, 128, 128, 0.1);
+  border-radius: 0 0 15px 15px;
+  padding: 2vh;
+}
+
+.productsDetails-list li {
+  list-style: none;
+  margin-bottom: 2vh;
+}
+
+.productsDetails-list li h5 {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.productsDetails-avaliations-container {
+  margin-top: 4vh;
+}
+
+.productsDetails-avaliations-container h3 {
+  font-weight: 400;
+  margin-bottom: 4vh;
+  text-align: center;
+  text-transform: uppercase;
+}
