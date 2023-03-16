@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/trybe-project-11-frontend-online-store/static/css/main.20250a08.css",
+    "main.js": "/trybe-project-11-frontend-online-store/static/js/main.483346ef.js",
+    "static/media/fshipping.svg": "/trybe-project-11-frontend-online-store/static/media/fshipping.a17dbd67c1f1891cfa5bdc003a701562.svg",
+    "static/media/notSearch.svg": "/trybe-project-11-frontend-online-store/static/media/notSearch.ef7564014e821e3b2e0d16c15f52d115.svg",
+    "static/media/mastercard.svg": "/trybe-project-11-frontend-online-store/static/media/mastercard.c69f30ada58da6d58e04cecc1478f712.svg",
+    "static/media/store.svg": "/trybe-project-11-frontend-online-store/static/media/store.4b2a262a45c2053b6af2e60ad0f606e3.svg",
+    "static/media/resume.svg": "/trybe-project-11-frontend-online-store/static/media/resume.74c97b3509fb422d2726ec4a56bd57b2.svg",
+    "static/media/price.svg": "/trybe-project-11-frontend-online-store/static/media/price.9371b4d66b7f4e36befc6c19c23144fe.svg",
+    "static/media/rating.svg": "/trybe-project-11-frontend-online-store/static/media/rating.f00f40d57f1af0417b181cd93c16d6c4.svg",
+    "static/media/elo.svg": "/trybe-project-11-frontend-online-store/static/media/elo.71d784988c12b5cc7f89a98fdd6e4944.svg",
+    "static/media/visa.svg": "/trybe-project-11-frontend-online-store/static/media/visa.b929dc7bfbc93645e763d38c29eb9ae6.svg",
+    "static/media/backBtn.svg": "/trybe-project-11-frontend-online-store/static/media/backBtn.05e45c6f967fc966d986505f82dd9cb5.svg",
+    "index.html": "/trybe-project-11-frontend-online-store/index.html",
+    "static/media/shopCart.svg": "/trybe-project-11-frontend-online-store/static/media/shopCart.7b30904409833806b3f110048368db0f.svg",
+    "static/media/homepage.svg": "/trybe-project-11-frontend-online-store/static/media/homepage.031cb5fa987e5060f196617de02a4bbf.svg",
+    "static/media/empty-cart.svg": "/trybe-project-11-frontend-online-store/static/media/empty-cart.7f269f79e3bb52f59f2421a3df7716e8.svg",
+    "static/media/plus.svg": "/trybe-project-11-frontend-online-store/static/media/plus.9068da5498c47f043d9c613ff91e2b4c.svg",
+    "static/media/list.svg": "/trybe-project-11-frontend-online-store/static/media/list.145202c0c2a68c69f1145d789a6b551d.svg",
+    "static/media/lupa.svg": "/trybe-project-11-frontend-online-store/static/media/lupa.f5b6ffce897f10a621e4198dba7bc6d6.svg",
+    "static/media/minus.svg": "/trybe-project-11-frontend-online-store/static/media/minus.6fb4a27dad663f2f6b719a5073ae5d57.svg",
+    "static/media/cross.svg": "/trybe-project-11-frontend-online-store/static/media/cross.64b77c3cba546bd55e622fa8bdee9d77.svg",
+    "static/media/barcode.svg": "/trybe-project-11-frontend-online-store/static/media/barcode.b98fbbff73b766975568980783aa3b6a.svg",
+    "main.20250a08.css.map": "/trybe-project-11-frontend-online-store/static/css/main.20250a08.css.map",
+    "main.483346ef.js.map": "/trybe-project-11-frontend-online-store/static/js/main.483346ef.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.20250a08.css",
+    "static/js/main.483346ef.js"
+  ]
+}
