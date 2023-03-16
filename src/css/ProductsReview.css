@@ -1,0 +1,57 @@
+.productsReview-container h3 {
+  border-bottom: 1px solid gray;
+  font-size: 1em;
+  font-weight: 400;
+  padding: 1vh;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.productsReview-card {
+  border-bottom: 1px solid gray;
+  margin-bottom: 1vh;
+  padding-bottom: 2vh;
+  text-align: center;
+}
+
+.productsReview-card button {
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 2vh;
+  width: 95%;
+}
+
+.productsReview-card button img {
+  text-align: right;
+  width: 20px;
+}
+
+.productsReview-card h4 {
+  font-weight: 400;
+}
+
+.productsReview-img-title {
+  align-items: center;
+  display: flex;
+}
+
+.productsReview-img-title h4 {
+  font-size: 0.8em;
+  text-align: right;
+}
+
+.productsReview-qnt-price {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2vh;
+}
+
+.productsReview-qnt-price h4 {
+  font-size: 0.9em;
+  font-weight: 400;
+}
+

@@ -1,0 +1,20 @@
+.checkoutProducts-form {
+  padding: 2vh;
+}
+
+.checkoutProducts-btn-submit-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 2vh 0;
+}
+
+.checkoutProducts-btn-submit {
+  background-color: #31c28dff;
+  border: none;
+  color: white;
+  height: 7vh;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  width: 80vw;
+}

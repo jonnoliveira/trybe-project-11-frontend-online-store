@@ -1,0 +1,32 @@
+.personalInfos-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1vh;
+}
+
+.personalInfos-container h3 {
+  border-bottom: 1px solid gray;
+  font-size: 1em;
+  font-weight: 400;
+  padding: 1vh;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.personalInfos-container label {
+  padding-top: 2vh;
+  text-align: center;
+  width: 100%;
+}
+
+.personalInfos-container input {
+  height: 5vh;
+  padding-left: 2vh;
+  width: 90%;
+}
+
+.personalInfos-container input::placeholder {
+  font-style: italic;
+}

@@ -1,0 +1,40 @@
+.paymentMethod-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1vh;
+}
+
+.paymentMethod-container h3 {
+  border-bottom: 1px solid gray;
+  font-size: 1em;
+  font-weight: 400;
+  padding: 1vh;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.paymentMethod-options-items {
+  margin-top: 2vh;
+  padding-left: 4vh;
+}
+
+.paymentMethod-options-items h5 {
+  font-size: 0.9em;
+  font-weight: 300;
+}
+
+.paymentMethod-options-items label {
+  align-items: center;
+  display: flex;
+  gap: 2vw;
+  justify-content: start;
+}
+
+.paymentMethod-options-items label img {
+  width: 50px;
+}
+
+.paymentMethod-options-items-cards {
+  display: flex;
+  justify-content: space-between;
+}

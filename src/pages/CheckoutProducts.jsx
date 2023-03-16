@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import PaymentMethod from '../components/PaymentMethod';
 import PersonalInfos from '../components/PersonalInfos';
 import InvalidField from '../components/InvalidField';
+import ProductsReview from '../components/ProductsReview';
+import MiniHeader from '../components/MiniHeader';
+import '../css/CheckoutProducts.css';
 
 export default class CheckoutProducts extends Component {
   state = {
@@ -59,13 +62,13 @@ export default class CheckoutProducts extends Component {
     if (nomeCompleto.length === 0 || emailValidation === false || CPF.length === 0
       || telefone.length === 0 || CEP.length === 0
       || endereço.length === 0 || payment === undefined) {
-      this.setState({ hidden: false });
+      this.setState({ hidden: false }); // trocar para isDisabled
     } else {
       this.setState({
         hidden: true,
       });
-      localStorage.removeItem('savedItems');
-      history.push('/');
+      localStorage.removeItem('savedItems'); // não remover ou criar outro para novo componente
+      history.push('/'); // criar outra rota resumo?
     }
   };
 
@@ -78,70 +81,54 @@ export default class CheckoutProducts extends Component {
     return validation;
   };
 
+  removeItem = ({ target }) => {
+    const { attProducts } = this.state;
+    const { name } = target;
+    const newArray = attProducts.filter((p) => p.title !== name);
+    this.setState({ attProducts: newArray });
+    console.log(newArray);
+  };
+
   render() {
     const {
-      attProducts,
-      nomeCompleto,
-      email,
-      CPF,
-      telefone,
-      CEP,
-      endereço,
-      hidden,
+      attProducts, nomeCompleto, email, CPF, telefone, CEP, endereço, hidden,
     } = this.state;
+    console.log(attProducts);
     return (
-      <div>
-        <form action="">
-          <fieldset>
-            <h3>Revise seus produtos</h3>
-            {
-              attProducts.map((product) => (
-                <div key={ product.title }>
-                  <p data-testid="shopping-cart-product-name">
-                    {product.title }
-                  </p>
-                  <p>
-                    Valor: R$
-                    { product.price }
-                  </p>
-                  <p>
-                    Qntd:
-                    { product.quantity }
-                  </p>
-                </div>
-              ))
-            }
-          </fieldset>
-          <fieldset>
-            <h3>Informações do Comprador</h3>
-            <PersonalInfos
-              onChangeHandler={ this.onChangeHandler }
-              nomeCompleto={ nomeCompleto }
-              email={ email }
-              CPF={ CPF }
-              telefone={ telefone }
-              CEP={ CEP }
-              endereço={ endereço }
-            />
-          </fieldset>
-          <fieldset>
-            <h3>Método de Pagamento:</h3>
-            <PaymentMethod
-              onChangeHandler={ this.onChangeHandler }
-            />
-          </fieldset>
+      <div className="checkoutProducts-container">
+        <MiniHeader />
+        <form action="" className="checkoutProducts-form">
+          <ProductsReview
+            attProducts={ attProducts }
+            removeItem={ this.removeItem }
+          />
+          <PersonalInfos
+            onChangeHandler={ this.onChangeHandler }
+            nomeCompleto={ nomeCompleto }
+            email={ email }
+            CPF={ CPF }
+            telefone={ telefone }
+            CEP={ CEP }
+            endereço={ endereço }
+          />
+          <PaymentMethod
+            onChangeHandler={ this.onChangeHandler }
+          />
         </form>
-        <button
-          type="submit"
-          onClick={ this.btnSubmitFunction }
-          data-testid="checkout-btn"
-        >
-          Finalizar
-        </button>
         {
           hidden === false
             && <InvalidField hidden={ hidden } />
         }
+        <div className="checkoutProducts-btn-submit-container">
+          <button
+            type="submit"
+            onClick={ this.btnSubmitFunction }
+            data-testid="checkout-btn"
+            className="checkoutProducts-btn-submit"
+          >
+            Finalizar
+          </button>
+        </div>
       </div>
     );
   }

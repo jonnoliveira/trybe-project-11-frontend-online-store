@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import '../css/PersonalInfos.css';
 
 export default class PersonalInfos extends Component {
   render() {
@@ -14,7 +15,8 @@ export default class PersonalInfos extends Component {
     } = this.props;
 
     return (
-      <div>
+      <div className="personalInfos-container">
+        <h3>Informações do Comprador</h3>
         <label htmlFor="nomeCompleto">
           <input
             type="text"
