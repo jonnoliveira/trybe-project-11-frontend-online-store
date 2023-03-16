@@ -6,6 +6,7 @@ import shopCart from '../assets/shopCart.svg';
 import plus from '../assets/plus.svg';
 import minus from '../assets/minus.svg';
 import emptyCart from '../assets/empty-cart.svg';
+import BtnBack from '../components/BtnBack';
 
 export default class ShoppingCart extends Component {
   state = {
@@ -78,12 +79,16 @@ export default class ShoppingCart extends Component {
 
   render() {
     const { attProducts } = this.state;
+    console.log(attProducts);
     return (
       <div className="shoppingCart-container">
         <MiniHeader />
         <div className="shoppingCart-container-title-img">
           <h1>Meu carrinho</h1>
           <img src={ shopCart } alt="Shopcart icon" />
+        </div>
+        <div className="productsDetails-btnBack">
+          <BtnBack props={ this.props } />
         </div>
         {
           attProducts.length

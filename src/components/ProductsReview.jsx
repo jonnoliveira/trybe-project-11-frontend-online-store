@@ -38,7 +38,7 @@ export default class ProductsReview extends Component {
         }
         <div className="productsReview-totalPrice">
           <h3>Preço total:</h3>
-          <p>{ `R$ ${total}` }</p>
+          <p>{ `R$ ${total.toFixed(2)}` }</p>
           <img src={ priceImg } alt="price icon" />
         </div>
       </div>

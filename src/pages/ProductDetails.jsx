@@ -4,6 +4,7 @@ import { getProductById } from '../services/api';
 import ButtonCart from '../components/ButtonCart';
 import FormProductDetails from '../components/FormProductDetails';
 import AddComents from '../components/AddComents';
+import BtnBack from '../components/BtnBack';
 import '../css/ProductDetails.css';
 import MiniHeader from '../components/MiniHeader';
 import ratingImg from '../assets/rating.svg';
@@ -169,6 +170,9 @@ export default class ProductDetails extends Component {
                     >
                       Adicionar ao carrinho
                     </button>
+                  </div>
+                  <div className="productsDetails-btnBack">
+                    <BtnBack props={ this.props } />
                   </div>
                   <div className="productsDetails-btnCart-especifications">
                     <button

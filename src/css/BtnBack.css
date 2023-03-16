@@ -1,0 +1,14 @@
+.btnBack-container {
+  align-items: center;
+  background-color: #003be5;
+  border: none;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  padding: 1vh;
+  width: 50%;
+}
+
+.btnBack-container img {
+  width: 20px;
+}

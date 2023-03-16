@@ -6,6 +6,7 @@ import InvalidField from '../components/InvalidField';
 import ProductsReview from '../components/ProductsReview';
 import MiniHeader from '../components/MiniHeader';
 import '../css/CheckoutProducts.css';
+import BtnBack from '../components/BtnBack';
 
 export default class CheckoutProducts extends Component {
   state = {
@@ -105,6 +106,9 @@ export default class CheckoutProducts extends Component {
     return (
       <div className="checkoutProducts-container">
         <MiniHeader />
+        <div className="productsDetails-btnBack">
+          <BtnBack props={ this.props } />
+        </div>
         <form action="" className="checkoutProducts-form">
           <ProductsReview
             attProducts={ attProducts }
