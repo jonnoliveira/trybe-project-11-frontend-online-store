@@ -11,7 +11,7 @@ export default class PersonalInfos extends Component {
       CPF,
       telefone,
       CEP,
-      endereço,
+      endereco,
     } = this.props;
 
     return (
@@ -80,10 +80,10 @@ export default class PersonalInfos extends Component {
         <label htmlFor="endereço">
           <input
             type="text"
-            name="endereço"
-            id="endereço"
+            name="endereco"
+            id="endereco"
             placeholder="Endereço"
-            value={ endereço }
+            value={ endereco }
             required
             onChange={ onChangeHandler }
             data-testid="checkout-address"
@@ -101,5 +101,5 @@ PersonalInfos.propTypes = {
   CPF: PropTypes.string.isRequired,
   telefone: PropTypes.string.isRequired,
   CEP: PropTypes.string.isRequired,
-  endereço: PropTypes.string.isRequired,
+  endereco: PropTypes.string.isRequired,
 };

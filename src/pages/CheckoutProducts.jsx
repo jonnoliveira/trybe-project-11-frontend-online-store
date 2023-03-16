@@ -16,7 +16,7 @@ export default class CheckoutProducts extends Component {
     CPF: '',
     telefone: '',
     CEP: '',
-    endereço: '',
+    endereco: '',
     hidden: true,
     total: 0,
   };
@@ -49,7 +49,7 @@ export default class CheckoutProducts extends Component {
     event.preventDefault();
 
     const {
-      attProducts, nomeCompleto, CPF, telefone, CEP, endereço, payment, total,
+      attProducts, nomeCompleto, CPF, telefone, CEP, endereco, payment, total,
     } = this.state;
     const { history } = this.props;
 
@@ -58,14 +58,14 @@ export default class CheckoutProducts extends Component {
     // ATENTAR ÀS VALIDAÇÕES: APRIMORAR CÓDIGO VALIDANDO CPF/TELEFONE/CEP
     if (nomeCompleto.length === 0 || emailValidation === false || CPF.length === 0
       || telefone.length === 0 || CEP.length === 0
-      || endereço.length === 0 || payment === undefined) {
+      || endereco.length === 0 || payment === undefined) {
       this.setState({ hidden: false });
     } else {
       this.setState({
         hidden: true,
       });
       const resume = [{
-        attProducts, nomeCompleto, CPF, telefone, CEP, endereço, payment, total,
+        attProducts, nomeCompleto, CPF, telefone, CEP, endereco, payment, total,
       }];
       localStorage.setItem('resume', JSON.stringify(resume));
       history.push('/resume');
@@ -99,7 +99,7 @@ export default class CheckoutProducts extends Component {
 
   render() {
     const {
-      attProducts, nomeCompleto, email, CPF, telefone, CEP, endereço, hidden, total,
+      attProducts, nomeCompleto, email, CPF, telefone, CEP, endereco, hidden, total,
     } = this.state;
     return (
       <div className="checkoutProducts-container">
@@ -120,7 +120,7 @@ export default class CheckoutProducts extends Component {
             CPF={ CPF }
             telefone={ telefone }
             CEP={ CEP }
-            endereço={ endereço }
+            endereco={ endereco }
           />
           <PaymentMethod
             onChangeHandler={ this.onChangeHandler }
