@@ -67,7 +67,7 @@ export default class Resume extends Component {
                     attProducts.map(({ title, price }) => (
                       <div key={ title } className="resume-products-list">
                         <h5>{title}</h5>
-                        <p>{`R$ ${price}`}</p>
+                        <p>{`R$ ${price.toFixed(2)}`}</p>
                       </div>
                     ))
                   }
