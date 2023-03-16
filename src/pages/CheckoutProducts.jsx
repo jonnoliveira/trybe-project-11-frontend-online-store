@@ -86,12 +86,13 @@ export default class CheckoutProducts extends Component {
     const { attProducts } = this.state;
     const { name } = target;
     const newArray = attProducts.filter((p) => p.title !== name);
-    this.setState({ attProducts: newArray });
-    console.log(newArray);
+    localStorage.setItem('savedItems', JSON.stringify(newArray));
+    this.setState({ attProducts: newArray }, () => this.totalCost());
   };
 
   totalCost = () => {
     const { attProducts } = this.state;
+    if (attProducts.length === 0) localStorage.clear();
 
     const total = attProducts.reduce((acc, curr) => acc + curr.price, 0);
     this.setState({ total });

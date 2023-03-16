@@ -22,16 +22,17 @@
   justify-content: flex-end;
   padding-top: 2vh;
   width: 95%;
+  z-index: 10;
 }
 
 .productsReview-totalPrice img {
   width: 25px;
 }
 
-
 .productsReview-card button img {
   text-align: right;
   width: 20px;
+  z-index: -1;
 }
 
 .productsReview-card h4 {
