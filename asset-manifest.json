@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/trybe-project-11-frontend-online-store/static/css/main.55c9af6e.css",
-    "main.js": "/trybe-project-11-frontend-online-store/static/js/main.d24d18c0.js",
+    "main.js": "/trybe-project-11-frontend-online-store/static/js/main.51825509.js",
     "static/media/fshipping.svg": "/trybe-project-11-frontend-online-store/static/media/fshipping.a17dbd67c1f1891cfa5bdc003a701562.svg",
     "static/media/notSearch.svg": "/trybe-project-11-frontend-online-store/static/media/notSearch.ef7564014e821e3b2e0d16c15f52d115.svg",
     "static/media/mastercard.svg": "/trybe-project-11-frontend-online-store/static/media/mastercard.c69f30ada58da6d58e04cecc1478f712.svg",
@@ -23,10 +23,10 @@
     "static/media/cross.svg": "/trybe-project-11-frontend-online-store/static/media/cross.64b77c3cba546bd55e622fa8bdee9d77.svg",
     "static/media/barcode.svg": "/trybe-project-11-frontend-online-store/static/media/barcode.b98fbbff73b766975568980783aa3b6a.svg",
     "main.55c9af6e.css.map": "/trybe-project-11-frontend-online-store/static/css/main.55c9af6e.css.map",
-    "main.d24d18c0.js.map": "/trybe-project-11-frontend-online-store/static/js/main.d24d18c0.js.map"
+    "main.51825509.js.map": "/trybe-project-11-frontend-online-store/static/js/main.51825509.js.map"
   },
   "entrypoints": [
     "static/css/main.55c9af6e.css",
-    "static/js/main.d24d18c0.js"
+    "static/js/main.51825509.js"
   ]
 }
