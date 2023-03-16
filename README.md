@@ -95,7 +95,6 @@ Neste projeto em grupo criamos uma página dinâmica de e-commerce com React. Pa
 ![Project-Frontend-Online-Store-preview-7](https://github.com/jonnoliveira/trybe-project-11-frontend-online-store/blob/main/images/frontend-online-store-7.png)
 ![Project-Frontend-Online-Store-preview-8](https://github.com/jonnoliveira/trybe-project-11-frontend-online-store/blob/main/images/frontend-online-store-8.png)
 ![Project-Frontend-Online-Store-preview-9](https://github.com/jonnoliveira/trybe-project-11-frontend-online-store/blob/main/images/frontend-online-store-9.png)
-![Project-Frontend-Online-Store-preview-10](https://github.com/jonnoliveira/trybe-project-11-frontend-online-store/blob/main/images/frontend-online-store-10.png)
 ![Project-Frontend-Online-Store-preview-11](https://github.com/jonnoliveira/trybe-project-11-frontend-online-store/blob/main/images/frontend-online-store-11.png)
 ![Project-Frontend-Online-Store-preview-12](https://github.com/jonnoliveira/trybe-project-11-frontend-online-store/blob/main/images/frontend-online-store-12.png)
 ![Project-Frontend-Online-Store-preview-13](https://github.com/jonnoliveira/trybe-project-11-frontend-online-store/blob/main/images/frontend-online-store-13.png)
