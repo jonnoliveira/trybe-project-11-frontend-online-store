@@ -1,0 +1,121 @@
+.resume-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2vh;
+}
+
+.resume-img-title {
+  align-items: center;
+  border-bottom: 1px solid gray;
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 2vh;
+  width: 100%;
+}
+
+.resume-img-title img {
+  width: 30px;
+}
+
+.resume-img-title h1 {
+  font-size: 1.1em;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.resume-products-list {
+  align-items: center;
+  border-bottom: 1px solid gray;
+  display: flex;
+  justify-content: space-between;
+  padding: 2vh;
+}
+
+.resume-products-list h5 {
+  font-weight: 400;
+  width: 70%;
+}
+
+.resume-products-list p {
+  font-size: 0.9em;
+  font-weight: 400;
+  text-align: end;
+  width: 30%;
+}
+
+.resume-info-container {
+  padding: 2vh;
+  width: 100%;
+}
+
+.resume-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vh;
+  margin-top: 2vh;
+}
+
+.resume-info h5 {
+  font-size: 0.8em;
+  font-weight: 400;
+}
+
+.resume-info p {
+  font-size: 0.9em;
+}
+
+.resume-value-container, .resume-payment-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.resume-value, .resume-payment {
+  align-items: center;
+  border-top: 1px solid gray;
+  display: flex;
+  justify-content: space-around;
+  padding: 2vh;
+  width: 80%;
+}
+
+.resume-value h5 {
+  font-size: 1.1em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.resume-payment {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+}
+
+.resume-payment h5 {
+  font-size: 0.9em;
+  font-weight: 400;
+}
+
+.resume-payment p {
+  font-size: 0.9em;
+  font-weight: 400;
+}
+
+.resume-btn-home {
+  background-color: #003be5;
+  border: none;
+  margin: 2vh 0;
+  width: 100%;
+}
+
+.resume-btn-home img {
+  height: 30px;
+  padding: 5px;
+  width: 150px;
+}

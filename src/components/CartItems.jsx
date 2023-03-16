@@ -58,7 +58,7 @@ export default class CartItems extends Component {
                     <h2 data-testid="free-shipping">FRETE GRÁTIS</h2>
                   </div>
                   <h4>
-                    { `R$ ${price}` }
+                    { `R$ ${price.toFixed(2)}` }
                   </h4>
                 </Link>
                 <button
@@ -88,7 +88,7 @@ export default class CartItems extends Component {
                     </h3>
                   </div>
                   <h4>
-                    { `R$ ${price}` }
+                    { `R$ ${price.toFixed(2)}` }
                   </h4>
                 </Link>
                 <button

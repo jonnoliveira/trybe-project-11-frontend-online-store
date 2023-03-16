@@ -55,7 +55,7 @@ export default class PersonalInfos extends Component {
         </label>
         <label htmlFor="telefone">
           <input
-            type="text"
+            type="number"
             name="telefone"
             id="telefone"
             placeholder="Telefone"

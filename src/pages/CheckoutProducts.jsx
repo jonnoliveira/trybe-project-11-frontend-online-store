@@ -49,12 +49,7 @@ export default class CheckoutProducts extends Component {
     event.preventDefault();
 
     const {
-      nomeCompleto,
-      CPF,
-      telefone,
-      CEP,
-      endereço,
-      payment,
+      attProducts, nomeCompleto, CPF, telefone, CEP, endereço, payment, total,
     } = this.state;
     const { history } = this.props;
 
@@ -64,13 +59,16 @@ export default class CheckoutProducts extends Component {
     if (nomeCompleto.length === 0 || emailValidation === false || CPF.length === 0
       || telefone.length === 0 || CEP.length === 0
       || endereço.length === 0 || payment === undefined) {
-      this.setState({ hidden: false }); // trocar para isDisabled
+      this.setState({ hidden: false });
     } else {
       this.setState({
         hidden: true,
       });
-      localStorage.removeItem('savedItems'); // não remover ou criar outro para novo componente
-      history.push('/'); // criar outra rota resumo?
+      const resume = [{
+        attProducts, nomeCompleto, CPF, telefone, CEP, endereço, payment, total,
+      }];
+      localStorage.setItem('resume', JSON.stringify(resume));
+      history.push('/resume');
     }
   };
 
