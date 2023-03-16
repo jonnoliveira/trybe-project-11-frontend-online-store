@@ -43,7 +43,7 @@ export default class PersonalInfos extends Component {
         </label>
         <label htmlFor="CPF">
           <input
-            type="text"
+            type="number"
             name="CPF"
             id="CPF"
             placeholder="CPF"
