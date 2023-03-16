@@ -111,10 +111,13 @@ export default class Home extends Component {
           }
           {
             isLoading
-              ? (
+              && (
                 <Loading />
               )
-              : (
+          }
+          {
+            (!isLoading && listInputItems.length === 0 && categoryList.length === 0)
+              && (
                 <div className="home-notfound-container">
                   <img src={ notSearch } alt="Nenhuma busca icon" />
                   <p> Você ainda não realizou uma busca...</p>

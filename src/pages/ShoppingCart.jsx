@@ -33,14 +33,12 @@ export default class ShoppingCart extends Component {
 
     if (inCart) {
       const index = attProducts.findIndex((e) => e.title.includes(title));
-      const itemPrice = attProducts[index].price;
+      const itemPrice = attProducts[index].price / attProducts[index].quantity;
       if (attProducts[index].quantity < attProducts[index].availableQuantity) {
         attProducts[index].quantity += 1;
         attProducts[index].price = itemPrice * attProducts[index].quantity;
       }
-
       localStorage.setItem('savedItems', JSON.stringify(attProducts));
-
       this.setState({ attProducts });
     }
   };
@@ -52,15 +50,17 @@ export default class ShoppingCart extends Component {
     if (inCart) {
       const index = attProducts.findIndex((e) => e.title.includes(title));
       const itemPrice = attProducts[index].price;
-      attProducts[index].price = itemPrice / attProducts[index].quantity;
 
+      if (attProducts[index].quantity > 1) {
+        attProducts[index].price = itemPrice - (itemPrice / attProducts[index].quantity);
+        attProducts[index].quantity -= 1;
+        localStorage.setItem('savedItems', JSON.stringify(attProducts));
+        return this.setState({ attProducts });
+      }
       if (attProducts[index].quantity === 1) {
         return 1; // QUANTIDADE MINIMA NO CARRINHO
       }
-      attProducts[index].quantity -= 1;
     }
-    localStorage.setItem('savedItems', JSON.stringify(attProducts));
-    this.setState({ attProducts });
   };
 
   removeLocalStorage = (title) => {
@@ -79,7 +79,6 @@ export default class ShoppingCart extends Component {
 
   render() {
     const { attProducts } = this.state;
-    console.log(attProducts);
     return (
       <div className="shoppingCart-container">
         <MiniHeader />

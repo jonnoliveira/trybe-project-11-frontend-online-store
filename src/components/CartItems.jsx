@@ -6,8 +6,24 @@ import shopCart from '../assets/shopCart.svg';
 import '../css/CartItem.css';
 
 export default class CartItems extends Component {
-  addLocalStorage = () => {
+  state = {
+    item: '',
+  };
+
+  componentDidMount() {
+    this.ifItemPriceNull();
+  }
+
+  ifItemPriceNull = () => {
     const { item } = this.props;
+    const { price } = item;
+    if (price === null) item.price = 0;
+
+    this.setState({ item });
+  };
+
+  addLocalStorage = () => {
+    const { item } = this.state;
     const { title, price, available_quantity: availableQuantity, thumbnail } = item;
     let products = [];
     const quantity = 1;
@@ -38,75 +54,83 @@ export default class CartItems extends Component {
       shipping: { free_shipping: freeShipping },
     } = item;
     return (
-      <div className="cartItem-container">
+      <div>
         {
-          freeShipping
-            ? (
-              <div data-testid="product" className="cartItem-products">
-                <Link
-                  to={ `/productdetails/${id}` }
-                  data-testid="product-detail-link"
-                >
-                  <div className="cartItem-products-img-title">
-                    <img src={ thumbnail } alt={ title } />
-                    <h3>
-                      { title }
-                    </h3>
-                  </div>
-                  <div className="cartItem-products-free-shipping">
-                    <img src={ fshipping } alt="Free shipping icon" />
-                    <h2 data-testid="free-shipping">FRETE GRÁTIS</h2>
-                  </div>
-                  <h4>
-                    { `R$ ${price.toFixed(2)}` }
-                  </h4>
-                </Link>
-                <button
-                  type="button"
-                  data-testid="product-add-to-cart"
-                  onClick={ () => {
-                    this.addLocalStorage();
-                    cartSizeCounter();
-                  } }
-                  className="cartItem-products-btn-addCart"
-                >
-                  Adicionar ao carrinho
-                  <img src={ shopCart } alt="Shopcart icon" />
-                </button>
-              </div>
-            )
-            : (
-              <div data-testid="product" className="cartItem-products">
-                <Link
-                  to={ `/productdetails/${id}` }
-                  data-testid="product-detail-link"
-                >
-                  <div className="cartItem-products-img-title">
-                    <img src={ thumbnail } alt={ title } />
-                    <h3>
-                      { title }
-                    </h3>
-                  </div>
-                  <h4>
-                    { `R$ ${price.toFixed(2)}` }
-                  </h4>
-                </Link>
-                <button
-                  type="button"
-                  data-testid="product-add-to-cart"
-                  onClick={ () => {
-                    this.addLocalStorage();
-                    cartSizeCounter();
-                  } }
-                  className="cartItem-products-btn-addCart"
-                >
-                  Adicionar ao carrinho
-                  <img src={ shopCart } alt="Shopcart icon" />
-                </button>
-              </div>
-            )
+          price !== null
+              && (
+                <div className="cartItem-container">
+                  {
+                    freeShipping
+                      ? (
+                        <div data-testid="product" className="cartItem-products">
+                          <Link
+                            to={ `/productdetails/${id}` }
+                            data-testid="product-detail-link"
+                          >
+                            <div className="cartItem-products-img-title">
+                              <img src={ thumbnail } alt={ title } />
+                              <h3>
+                                { title }
+                              </h3>
+                            </div>
+                            <div className="cartItem-products-free-shipping">
+                              <img src={ fshipping } alt="Free shipping icon" />
+                              <h2 data-testid="free-shipping">FRETE GRÁTIS</h2>
+                            </div>
+                            <h4>
+                              { `R$ ${price.toFixed(2)}` }
+                            </h4>
+                          </Link>
+                          <button
+                            type="button"
+                            data-testid="product-add-to-cart"
+                            onClick={ () => {
+                              this.addLocalStorage();
+                              cartSizeCounter();
+                            } }
+                            className="cartItem-products-btn-addCart"
+                          >
+                            Adicionar ao carrinho
+                            <img src={ shopCart } alt="Shopcart icon" />
+                          </button>
+                        </div>
+                      )
+                      : (
+                        <div data-testid="product" className="cartItem-products">
+                          <Link
+                            to={ `/productdetails/${id}` }
+                            data-testid="product-detail-link"
+                          >
+                            <div className="cartItem-products-img-title">
+                              <img src={ thumbnail } alt={ title } />
+                              <h3>
+                                { title }
+                              </h3>
+                            </div>
+                            <h4>
+                              { `R$ ${price.toFixed(2)}` }
+                            </h4>
+                          </Link>
+                          <button
+                            type="button"
+                            data-testid="product-add-to-cart"
+                            onClick={ () => {
+                              this.addLocalStorage();
+                              cartSizeCounter();
+                            } }
+                            className="cartItem-products-btn-addCart"
+                          >
+                            Adicionar ao carrinho
+                            <img src={ shopCart } alt="Shopcart icon" />
+                          </button>
+                        </div>
+                      )
+                  }
+                </div>
+              )
         }
       </div>
+
     );
   }
 }
