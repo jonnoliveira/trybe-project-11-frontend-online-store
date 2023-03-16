@@ -2,7 +2,7 @@
 
 ## Esse projeto pertence ao módulo de `front-end` do curso da [Trybe](https://www.betrybe.com/) :green_heart:
 
-## :construction: CSS em aprimoramento :construction:
+## Acesse o projeto clicando [aqui](https://jonnoliveira.github.io/trybe-project-11-frontend-online-store/)! :computer:
  
 <details>
  
