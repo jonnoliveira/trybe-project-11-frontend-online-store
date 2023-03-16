@@ -35,9 +35,11 @@ export default class CartItems extends Component {
     const inCart = products.find((product) => product.title === title);
     if (inCart) {
       const index = products.findIndex((e) => e.title === title);
-      products[index].quantity += 1;
-      const newPrice = products[index].quantity * products[index].price;
-      products[index].price = newPrice;
+      const itemPrice = products[index].price / products[index].quantity;
+      if (products[index].quantity < products[index].availableQuantity) {
+        products[index].quantity += 1;
+        products[index].price = itemPrice * products[index].quantity;
+      }
     } else {
       products.push({ title, price, quantity, availableQuantity, thumbnail });
     }
