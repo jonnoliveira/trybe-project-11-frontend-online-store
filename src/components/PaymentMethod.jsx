@@ -4,7 +4,6 @@ import barcode from '../assets/barcode.svg';
 import visa from '../assets/visa.svg';
 import elo from '../assets/elo.svg';
 import mastercard from '../assets/mastercard.svg';
-
 import '../css/PaymentMethod.css';
 
 export default class PaymentMethod extends Component {

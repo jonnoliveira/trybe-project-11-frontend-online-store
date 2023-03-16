@@ -17,13 +17,14 @@ export default class CheckoutProducts extends Component {
     CEP: '',
     endereço: '',
     hidden: true,
+    total: 0,
   };
 
   componentDidMount() {
     if (localStorage.savedItems) {
       this.setState({
         attProducts: this.recoverLocalStorage(),
-      });
+      }, () => this.totalCost());
     }
   }
 
@@ -89,11 +90,17 @@ export default class CheckoutProducts extends Component {
     console.log(newArray);
   };
 
+  totalCost = () => {
+    const { attProducts } = this.state;
+
+    const total = attProducts.reduce((acc, curr) => acc + curr.price, 0);
+    this.setState({ total });
+  };
+
   render() {
     const {
-      attProducts, nomeCompleto, email, CPF, telefone, CEP, endereço, hidden,
+      attProducts, nomeCompleto, email, CPF, telefone, CEP, endereço, hidden, total,
     } = this.state;
-    console.log(attProducts);
     return (
       <div className="checkoutProducts-container">
         <MiniHeader />
@@ -101,6 +108,7 @@ export default class CheckoutProducts extends Component {
           <ProductsReview
             attProducts={ attProducts }
             removeItem={ this.removeItem }
+            total={ total }
           />
           <PersonalInfos
             onChangeHandler={ this.onChangeHandler }

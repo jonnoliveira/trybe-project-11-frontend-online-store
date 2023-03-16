@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cross from '../assets/cross.svg';
+import priceImg from '../assets/price.svg';
 import '../css/ProductsReview.css';
 
 export default class ProductsReview extends Component {
   render() {
-    const { attProducts, removeItem } = this.props;
+    const { attProducts, removeItem, total } = this.props;
     return (
       <div className="productsReview-container">
-        <h3>Revise seus produtos</h3>
+        <h2>Revise seus produtos</h2>
         {
           attProducts.map(({ title, price, quantity, thumbnail }) => (
             <div key={ title } className="productsReview-card">
@@ -35,6 +36,11 @@ export default class ProductsReview extends Component {
             </div>
           ))
         }
+        <div className="productsReview-totalPrice">
+          <h3>Preço total:</h3>
+          <p>{ `R$ ${total}` }</p>
+          <img src={ priceImg } alt="price icon" />
+        </div>
       </div>
     );
   }
@@ -43,4 +49,5 @@ export default class ProductsReview extends Component {
 ProductsReview.propTypes = {
   attProducts: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   removeItem: PropTypes.func.isRequired,
+  total: PropTypes.number.isRequired,
 };
