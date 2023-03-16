@@ -67,7 +67,7 @@ export default class PersonalInfos extends Component {
         </label>
         <label htmlFor="CEP">
           <input
-            type="text"
+            type="number"
             name="CEP"
             id="CEP"
             placeholder="CEP"
