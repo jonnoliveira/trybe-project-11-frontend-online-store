@@ -38,3 +38,15 @@
   display: flex;
   justify-content: space-between;
 }
+
+@media screen and ( min-width : 768px ) {
+
+  .paymentMethod-container h3 {
+    font-size: 1.1em;
+  }
+
+  .paymentMethod-options-items {
+    margin: 2vh auto;
+    width: 80%;
+  }
+}

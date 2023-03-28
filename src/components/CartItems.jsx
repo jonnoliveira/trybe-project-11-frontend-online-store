@@ -83,18 +83,20 @@ export default class CartItems extends Component {
                               { `R$ ${price.toFixed(2)}` }
                             </h4>
                           </Link>
-                          <button
-                            type="button"
-                            data-testid="product-add-to-cart"
-                            onClick={ () => {
-                              this.addLocalStorage();
-                              cartSizeCounter();
-                            } }
-                            className="cartItem-products-btn-addCart"
-                          >
-                            Adicionar ao carrinho
-                            <img src={ shopCart } alt="Shopcart icon" />
-                          </button>
+                          <div className="carItem-products-addbtn">
+                            <button
+                              type="button"
+                              data-testid="product-add-to-cart"
+                              onClick={ () => {
+                                this.addLocalStorage();
+                                cartSizeCounter();
+                              } }
+                              className="cartItem-products-btn-addCart"
+                            >
+                              Adicionar ao carrinho
+                              <img src={ shopCart } alt="Shopcart icon" />
+                            </button>
+                          </div>
                         </div>
                       )
                       : (
@@ -113,18 +115,20 @@ export default class CartItems extends Component {
                               { `R$ ${price.toFixed(2)}` }
                             </h4>
                           </Link>
-                          <button
-                            type="button"
-                            data-testid="product-add-to-cart"
-                            onClick={ () => {
-                              this.addLocalStorage();
-                              cartSizeCounter();
-                            } }
-                            className="cartItem-products-btn-addCart"
-                          >
-                            Adicionar ao carrinho
-                            <img src={ shopCart } alt="Shopcart icon" />
-                          </button>
+                          <div className="carItem-products-addbtn">
+                            <button
+                              type="button"
+                              data-testid="product-add-to-cart"
+                              onClick={ () => {
+                                this.addLocalStorage();
+                                cartSizeCounter();
+                              } }
+                              className="cartItem-products-btn-addCart"
+                            >
+                              Adicionar ao carrinho
+                              <img src={ shopCart } alt="Shopcart icon" />
+                            </button>
+                          </div>
                         </div>
                       )
                   }

@@ -11,7 +11,7 @@
   display: flex;
   font-size: 1em;
   font-weight: 600;
-  justify-content: space-evenly;
+  justify-content: space-around;
   letter-spacing: 2px;
   padding: 2vh;
   text-transform: uppercase;

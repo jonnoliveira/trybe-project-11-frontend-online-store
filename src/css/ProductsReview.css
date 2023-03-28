@@ -1,4 +1,4 @@
-.productsReview-container h2 {
+.productsReview-container h3 {
   border-bottom: 1px solid gray;
   font-size: 1em;
   font-weight: 400;
@@ -42,6 +42,7 @@
 .productsReview-img-title {
   align-items: center;
   display: flex;
+  justify-content: space-around;
 }
 
 .productsReview-img-title h4 {
@@ -61,7 +62,6 @@
   font-weight: 400;
 }
 
-
 .productsReview-totalPrice {
   align-items: center;
   background-color: rgba(128, 128, 128, 0.226);
@@ -80,3 +80,17 @@
   font-size: 1.2em;
 }
 
+@media screen and ( min-width : 768px ) {
+
+  .productsReview-container h3 {
+    font-size: 1.1em;
+  }
+
+  .productsReview-img-title h4 {
+    font-size: 0.9em;
+  }
+
+  .productsReview-qnt-price h4 {
+    font-size: 0.9em;
+  }
+}

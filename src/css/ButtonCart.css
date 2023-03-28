@@ -19,3 +19,14 @@
   top: -7vh;
   width: 20px;
 }
+
+@media screen and ( min-width : 768px ) {
+
+  .ButtonCart-container img {
+    width: 30px;
+  }
+
+  .ButtonCart-counter {
+    right: -2vw;
+  }
+}

@@ -9,7 +9,7 @@ export default class ProductsReview extends Component {
     const { attProducts, removeItem, total } = this.props;
     return (
       <div className="productsReview-container">
-        <h2>Revise seus produtos</h2>
+        <h3>Revise seus produtos</h3>
         {
           attProducts.map(({ title, price, quantity, thumbnail }) => (
             <div key={ title } className="productsReview-card">

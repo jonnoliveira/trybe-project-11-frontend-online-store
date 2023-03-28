@@ -36,7 +36,9 @@ export default class Header extends Component {
               <img src={ lupa } alt="Lupa icon" />
             </button>
           </div>
-          <ButtonCart count={ count } />
+          <div className="header-buttonCart">
+            <ButtonCart count={ count } />
+          </div>
         </div>
       </header>
     );

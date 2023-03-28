@@ -37,7 +37,9 @@
 }
 
 .shoppingCart-product-price {
-  margin: 1vh 0;
+  font-size: 1.1em;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .shoppingCart-product-quantity {
@@ -47,8 +49,10 @@
 }
 
 .shoppingCart-product-quantity-btns {
+  align-items: center;
   display: flex;
   gap: 2vh;
+  justify-content: center;
   width: 20%;
 }
 
@@ -95,4 +99,17 @@
   font-size: medium;
   font-style: italic;
   font-weight: 400;
+}
+
+@media screen and ( min-width : 768px ) {
+
+  .shoppingCart-product-img-name p {
+    font-size: 0.9em;
+  }
+
+  .shoppingCart-product-quantity-btns button {
+    background-color: transparent;
+    border: none;
+    width: 20%;
+  }
 }
