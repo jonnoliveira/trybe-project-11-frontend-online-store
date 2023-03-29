@@ -1,6 +1,6 @@
 # PROJETO 11 - FRONT-END ONLINE STORE :computer:
 
-## Esse projeto pertence ao módulo de `front-end` do curso da [Trybe](https://www.betrybe.com/) :green_heart:
+## Esse projeto pertence ao módulo de `front-end` do curso da [Trybe](https://www.betrybe.com/) :green_heart:  
 
 ## Acesse o projeto clicando [aqui](https://jonnoliveira.github.io/trybe-project-11-frontend-online-store/)! :computer:
  
