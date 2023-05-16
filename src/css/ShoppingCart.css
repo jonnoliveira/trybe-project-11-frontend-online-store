@@ -104,12 +104,25 @@
 @media screen and ( min-width : 768px ) {
 
   .shoppingCart-product-img-name p {
-    font-size: 0.9em;
+    font-size: 1em;
   }
 
   .shoppingCart-product-quantity-btns button {
     background-color: transparent;
     border: none;
     width: 20%;
+  }
+}
+
+@media screen and ( min-width : 1024px ) {
+
+  .shoppingCart-product-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .shoppingCart-product-removeBtn {
+    align-self: center;
+    width: 40vw;
   }
 }

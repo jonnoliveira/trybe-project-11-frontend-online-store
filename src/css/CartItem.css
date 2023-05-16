@@ -89,3 +89,20 @@
     font-size: 1.1em;
   }
 }
+
+@media screen and ( min-width : 1024px ) {
+
+
+  .cartItem-container {
+    border: 3px solid rgba(128, 128, 128, 0.486);
+    margin: 5px;
+  }
+
+  .cartItem-products-img-title h3 {
+    font-size: 1.1em;
+  }
+
+  .cartItem-products-btn-addCart {
+    width: 50vw;
+  }
+}
