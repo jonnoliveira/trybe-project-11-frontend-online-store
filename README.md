@@ -35,38 +35,38 @@ Neste projeto em grupo criamos uma página dinâmica de e-commerce com React. Pa
 
 </summary>
 
-### I. Implemente o módulo de acesso à api do Mercado Livre.
+* I. Implemente o módulo de acesso à api do Mercado Livre.
 
-### II. Crie uma página de listagem de produtos vazia.
+* II. Crie uma página de listagem de produtos vazia.
 
-### III. Crie a página do carrinho de compras.
+* III. Crie a página do carrinho de compras.
 
-### IV. Liste as categorias de produtos disponíveis via API na página principal.
+* IV. Liste as categorias de produtos disponíveis via API na página principal.
 
-### V. Liste os produtos buscados por termos, com os dados resumidos, associados a esses termos.
+* V. Liste os produtos buscados por termos, com os dados resumidos, associados a esses termos.
 
-### VI. Selecione uma categoria e mostre somente os produtos daquela categoria.
+* VI. Selecione uma categoria e mostre somente os produtos daquela categoria.
 
-### VII. Redirecione para uma tela com a exibição detalhada ao clicar na exibição resumida de um produto.
+* VII. Redirecione para uma tela com a exibição detalhada ao clicar na exibição resumida de um produto.
 
-### VIII. Adicione produtos a partir da tela de listagem de produtos.
+* VIII. Adicione produtos a partir da tela de listagem de produtos.
 
-### IX. Adicione um produto ao carrinho a partir de sua tela de exibição detalhada.
+* IX. Adicione um produto ao carrinho a partir de sua tela de exibição detalhada.
 
-### X. Visualize a lista de produtos adicionados ao carrinho em sua página e permita a manipulação da sua quantidade.
+* X. Visualize a lista de produtos adicionados ao carrinho em sua página e permita a manipulação da sua quantidade.
 
-### XI. Avalie e comente acerca de um produto em sua tela de exibição detalhada.
+* XI. Avalie e comente acerca de um produto em sua tela de exibição detalhada.
 
-### XII. Finalize a compra vendo um resumo dela, preenchendo os seus dados e escolhendo a forma de pagamento.
+* XII. Finalize a compra vendo um resumo dela, preenchendo os seus dados e escolhendo a forma de pagamento.
 ---
 
 ## Requisitos bônus:
 
-### XIII. Mostre junto ao ícone do carrinho a quantidade de produtos dentro dele, em todas as telas em que ele aparece.
+* XIII. Mostre junto ao ícone do carrinho a quantidade de produtos dentro dele, em todas as telas em que ele aparece.
 
-### XIV. Limite a quantidade de produtos adicionados ao carrinho pela quantidade disponível em estoque.
+* XIV. Limite a quantidade de produtos adicionados ao carrinho pela quantidade disponível em estoque.
 
-### XV. Mostre quais produtos tem o frete grátis.
+* XV. Mostre quais produtos tem o frete grátis.
 
 </details>
 
